@@ -1,5 +1,7 @@
-from tqdm import tqdm as _tqdm
+import sys as _sys
+
 from loguru import logger
+from tqdm import tqdm as _tqdm
 
 logger.remove()  # removes the default console logger provided by Loguru.
 # I find it to be too noisy with details more appropriate for file logging.
@@ -18,7 +20,9 @@ logger.add("file_{time}.log", level="TRACE", encoding="utf8")  # Unicode instruc
     "If this doesn't help, and it keeps doing this after many cut-outs, you can check out issues tab:\n"
     "https://github.com/TheLastGimbus/GooglePhotosTakeoutHelper/issues \n"
     "to see if anyone has similar issue, or contact me other way:\n"
-    "https://github.com/TheLastGimbus/GooglePhotosTakeoutHelper/blob/master/README.md#contacterrors \n"
+    "https://github.com/TheLastGimbus/GooglePhotosTakeoutHelper/blob/master/README.md#contacterrors \n",
+    # Still tell the system that something bad happened
+    onerror=lambda e: _sys.exit(1)
 
 )  # wraps entire function in a trap to display enhanced error tracebaks after an exception occurs.
 def main():
