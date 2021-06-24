@@ -1,4 +1,4 @@
-![PyPI](https://img.shields.io/pypi/v/google-photos-takeout-helper)
+[![PyPI](https://img.shields.io/pypi/v/google-photos-takeout-helper)](https://pypi.org/project/google-photos-takeout-helper/)
 [![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg?logo=paypal)](https://www.paypal.me/TheLastGimbus)
 
 # Google Photos Takeout Helper
@@ -11,16 +11,6 @@ What if you want to just have one folder with all photos, in chronological order
 This script does just that - it organizes and cleans up your Takeout for you :+1:
 
 It will take all of your photos from those tiny folders, set their `exif` and `last modified`, and other properties correctly, and put it in one big folder (or folders divided by a month)
-
-# BIG DISCLAIMER - GOOGLE RECENTLY CHANGED FOLDER STRUCTURE
-
-- If you have new "year folders" (that is, few folders named like "Photos from 2012") (+albums) - use the newest
-  version
-  - `pip install -U google-photos-takeout-helper`
-- If you have old "date folders" (that is, ton of folders named like "2012-06-23") - use version `1.2.0`
-  - `pip install -U google-photos-takeout-helper==1.2.0`
-
-I don't know if new version fully works, so let me know if it doesn't :+1:
 
 ## How to use:
 0. Get all your photos in [Google Takeout](https://takeout.google.com/) (select only Google Photos)
@@ -60,12 +50,10 @@ super thankful for any donations
 You can also send me some Bitcoin: `3GezcSsZ6TWw1ug9Q8rK44y9goWa3vTmbk`, DOGE: `DTKFGSzPCDxZPQQtCTyUHbpRYy6n8fSpco`, or Monero: `43HorPVy1PTGVph3Qh3b6vVSfW2p3fH4ChjtiLVdLZw4Kw1vZUgCCcZSmfGCeEFq6bdeuF7zMutAcAcuuYFf8vEr6htBWTk`
 
 
-##### But, be aware if you move your photos on you Android phone...
+### But, be aware if you move your photos on you Android phone...
 Beware, that (99% of the times), if you move some files in Android, their creation and modification time is re-seted to current.
 
-"Simple Gallery" app usually keeps original file creation time when moving and coping (but I don't guarantee it). It's also pretty cool and you can check it out:
-
-https://github.com/SimpleMobileTools/Simple-Gallery
+"Simple Gallery" app usually keeps original file creation time when moving and coping (but I don't guarantee it). It's also pretty cool and you can check it out: https://github.com/SimpleMobileTools/Simple-Gallery
 
 ## What to do when you got rid of Google Photos? What are the alternatives?
  - I really recommend you using [Syncthing](https://syncthing.net/) for syncing your photos and files across devices. It does so through your local WiFi, so you're not dependend on any service or internet connection. It will also keep original file creation date and metadata, so it resolves Android issue that I mentioned before.
@@ -74,20 +62,27 @@ https://github.com/SimpleMobileTools/Simple-Gallery
 
  - Guys at [Photoprism](https://photoprism.org/) are working on full Google Photos alternative, with search and AI tagging etc, but it's stil work in progress. (I will edit this when they are done, but can't promise :P ) 
 
+### Google has changed folder structure
+Around december 2020, Google stopped putting photos in thousands of "yyyy-mm-dd" folders, and started putting them in tens of "Photos form yyyy" folders instead 🙄
+
+- If you have new "year folders" (that is, few folders named like "Photos from 2012") (+albums) - use the newest
+  version
+  - `pip install -U google-photos-takeout-helper`
+- If you have old "date folders" (that is, ton of folders named like "2012-06-23") - use version `1.2.0`
+  - `pip install -U google-photos-takeout-helper==1.2.0`
+Old version is... well, old, and I recommend you to just request the takeout again and run agains newest version of script :+1:
 
 #### Other Takeout projects
 I used this tool to export my notes to markdown - you can then edit them with any markdown editor you like :)
 
 https://github.com/vHanda/google-keep-exporter
 
-
 This one saves them in format ready for Evernote/ClintaNotes:
 
 https://github.com/HardFork/KeepToText
 
-
 ### TODO (Pull Requests welcome):
-- [ ] Videos' Exif data
+- [ ] Videos' Exif data - probably impossible to do :confused:
 - [x] Gps data: from JSON to Exif - Thank you @DalenW :sparkling_heart:
 - [x] Some way to handle albums - THANK YOU @bitsondatadev :kissing_heart: :tada: :woman_dancing:
 - [X] Windoza standalone `.exe` file - Thank you, _me_ :kissing_heart:
